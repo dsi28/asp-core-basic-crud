@@ -1,0 +1,16 @@
+﻿@page
+@model WebApplication1.Pages.CreateModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+<p>Enter your name:</p>
+<form method="POST">
+    @*add asp-validation in order for there to be messages when ever there is invalid input.*@
+    <div asp-validation-summary="All" />
+    @* asp-for links the input to a propery in the CreateModel class:
+        For this to work there has to be an instance of the Customer class(Cx) created in the Create Model *@
+    <div>name: <input asp-for="Cx.Name" /></div>
+    <input type="submit" />
+</form>
